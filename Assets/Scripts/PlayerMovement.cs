@@ -13,14 +13,13 @@ public class PlayerMovement : MonoBehaviour
     public float maxtime = 0.5f;
     private float lastPlay;
     public int maxammo = 2;
-    //Drag in the Bullet Emitter from the Component Inspector.
     public GameObject emisor;
-
-    //Drag in the Bullet Prefab from the Component Inspector.
     public GameObject Bullet;
-
-    //Enter the Speed of the Bullet from the Component Inspector.
     public float fuerzaBullet;
+    public int life = 2;
+    public GameObject player;
+    private float lastHit = 0f;
+    private float maxHit = 0.5f;
 
     // Use this for initialization
     private void Awake()
@@ -94,7 +93,10 @@ public class PlayerMovement : MonoBehaviour
             // animator.SetTrigger("walk");
             rb2d.velocity = new Vector2(2, rb2d.velocity.y);
         }
-
+        if (life <= 0)
+        {
+            Destroy(player);
+        }
 
     }
 
@@ -102,12 +104,17 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+   void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
             isGrounded = true;
             ammo = 0;
+        }
+        else if (collision.gameObject.tag == "Enemy" && Time.time - lastHit > maxHit)
+        {
+            life -= 1;
+            lastHit = Time.time;
         }
     }
 }
