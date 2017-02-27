@@ -113,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy" && Time.time - lastHit > maxHit)
         {
+           
             life -= 1;
             lastHit = Time.time;
         }
