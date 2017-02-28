@@ -102,15 +102,23 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            //animator.SetTrigger("Jump");
+            ammo = 1;
+        }
+    }
 
-
-   void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
             isGrounded = true;
             ammo = 0;
         }
+        
         else if (collision.gameObject.tag == "Enemy" && Time.time - lastHit > maxHit)
         {
            
