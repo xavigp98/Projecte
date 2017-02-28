@@ -125,5 +125,10 @@ public class PlayerMovement : MonoBehaviour
             life -= 1;
             lastHit = Time.time;
         }
+        else if(collision.gameObject.tag == "Enemy2" && Time.time - lastHit > maxHit)
+        {
+            life -= 1;
+            lastHit = Time.time;
+        }
     }
 }
