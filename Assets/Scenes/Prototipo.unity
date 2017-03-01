@@ -215,6 +215,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1115682809}
+    - target: {fileID: 5059280, guid: 264276744fbd9a2429aa55cf5b567040, type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 264276744fbd9a2429aa55cf5b567040, type: 2}
   m_IsPrefabParent: 0
@@ -257,6 +261,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 193966, guid: 070411facd3875f469d2e13a3dd4393f, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 070411facd3875f469d2e13a3dd4393f, type: 2}
   m_IsPrefabParent: 0
@@ -294,7 +302,7 @@ MonoBehaviour:
   jumpSpeed: 7
   isGrounded: 0
   ammo: 0
-  maxtime: 0.5
+  maxtime: 0.4
   maxammo: 2
   emisor: {fileID: 205402848}
   Bullet: {fileID: 167590, guid: e0db04641f3ea5840aadcd87c6b46abb, type: 2}
