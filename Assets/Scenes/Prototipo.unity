@@ -268,6 +268,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 070411facd3875f469d2e13a3dd4393f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1098052061 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 121004, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+  m_PrefabInternal: {fileID: 1868800661}
+--- !u!61 &1098052062
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1098052061}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 7.02, y: 1.68}
 --- !u!1 &1115682804
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,8 +316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680cc08f8970bdb4f9039255bef85f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 5
   jumpSpeed: 7
+  reboteHurt: 0.2
   isGrounded: 0
   ammo: 0
   maxtime: 0.4
@@ -307,7 +326,7 @@ MonoBehaviour:
   emisor: {fileID: 205402848}
   Bullet: {fileID: 167590, guid: e0db04641f3ea5840aadcd87c6b46abb, type: 2}
   fuerzaBullet: 5
-  life: 1
+  life: 10
   player: {fileID: 1115682804}
 --- !u!50 &1115682806
 Rigidbody2D:
@@ -482,6 +501,9 @@ GameObject:
   - 4: {fileID: 1812577962}
   - 212: {fileID: 1812577961}
   - 61: {fileID: 1812577960}
+  - 61: {fileID: 1812577965}
+  - 61: {fileID: 1812577964}
+  - 61: {fileID: 1812577963}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Floor
@@ -546,3 +568,108 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!61 &1812577963
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812577959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 26.350563, y: 5.7486115}
+  serializedVersion: 2
+  m_Size: {x: 2.858008, y: 2.8615193}
+--- !u!61 &1812577964
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812577959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 26.277668, y: -5.7360806}
+  serializedVersion: 2
+  m_Size: {x: 14.393262, y: 2.7718227}
+--- !u!61 &1812577965
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812577959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 9.087346, y: -5.7821345}
+  serializedVersion: 2
+  m_Size: {x: 2.7944667, y: 2.8317735}
+--- !u!1001 &1868800661
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 407542, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 407542, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 407542, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407542, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407542, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407542, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407542, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 407542, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 121004, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_Name
+      value: Pinchos/Lava/Suelo que mata
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161584, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_Offset.y
+      value: -0.08929157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161584, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_Size.x
+      value: 7.0199995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161584, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_Size.y
+      value: 1.5014167
+      objectReference: {fileID: 0}
+    - target: {fileID: 121004, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+      propertyPath: m_TagString
+      value: Pinchos
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6161584, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 1ef7c071f8abb1541b217b4d6e2821be, type: 2}
+  m_IsPrefabParent: 0

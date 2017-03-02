@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     public float moveSpeed = 5f;
     public float jumpSpeed = 10f;
+    public float reboteHurt = 0.5f;
     private Rigidbody2D rb2d;
     public bool isGrounded = false;
     public int ammo = 0;
@@ -44,8 +45,7 @@ public class PlayerMovement : MonoBehaviour
             lastPlay = Time.time;
 
         }
-
-
+       
         if (Input.GetKey(KeyCode.W) && isGrounded == false && ammo < maxammo)
         {
             //animator.SetTrigger("Jump");
@@ -68,13 +68,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.A) && isGrounded == true)
+        if(Input.GetKey(KeyCode.A) && isGrounded == true)
         {
             //animator.SetTrigger("walk");
             rb2d.velocity = new Vector2(-(1 * moveSpeed), 0);
         }
-
-
+      
         if (Input.GetKey(KeyCode.D) && isGrounded == true)
         {
             // animator.SetTrigger("walk");
@@ -84,14 +83,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && isGrounded == false)
         {
             //animator.SetTrigger("walk");
-            rb2d.velocity = new Vector2(-2, rb2d.velocity.y);
+            rb2d.velocity = new Vector2(-4, rb2d.velocity.y);
         }
 
 
         if (Input.GetKey(KeyCode.D) && isGrounded == false)
         {
             // animator.SetTrigger("walk");
-            rb2d.velocity = new Vector2(2, rb2d.velocity.y);
+            rb2d.velocity = new Vector2(4, rb2d.velocity.y);
         }
         if (life <= 0)
         {
@@ -106,8 +105,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, reboteHurt * jumpSpeed );
             //animator.SetTrigger("Jump");
             ammo = 1;
+        }
+        else if (collision.gameObject.tag == "Pinchos")
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x,reboteHurt * jumpSpeed);
+            //animator.SetTrigger("Hurt");
+            life -= 1;
         }
     }
 
@@ -121,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
 
         else if (collision.gameObject.tag == "Enemy" && Time.time - lastHit > maxHit)
         {
-
+            rb2d.velocity = new Vector2(rb2d.velocity.x, reboteHurt * jumpSpeed);
             life -= 1;
             lastHit = Time.time;
         }
