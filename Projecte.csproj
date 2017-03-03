@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Bloque_Roto.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy2Movement.cs" />
     <Compile Include="Assets\Scripts\EnemyFollowMovement.cs" />

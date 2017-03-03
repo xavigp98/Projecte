@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Bullet
   - Pinchos
+  - Plataformas
+  - Bloque_Roto
+  - New Tag
   layers:
   - Default
   - TransparentFX

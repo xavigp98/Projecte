@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKey(KeyCode.W) && isGrounded == true)
         {
             //animator.SetTrigger("Jump");
@@ -67,9 +66,13 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(balaTemporal, 0.2f);
             }
         }
-
+        if(!Input.anyKeyDown && isGrounded == true)
+        {
+            rb2d.velocity = new Vector2(0.0f, 0.0f);
+        }
         if(Input.GetKey(KeyCode.A) && isGrounded == true)
         {
+       
             //animator.SetTrigger("walk");
             rb2d.velocity = new Vector2(-(1 * moveSpeed), 0);
         }
@@ -78,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // animator.SetTrigger("walk");
             rb2d.velocity = new Vector2((1 * moveSpeed), 0);
-        }
+        }        
 
         if (Input.GetKey(KeyCode.A) && isGrounded == false)
         {
@@ -98,9 +101,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
-
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Enemy")
@@ -120,6 +121,11 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
+        {
+            isGrounded = true;
+            ammo = 0;
+        }
+        if (collision.gameObject.tag == "Bloque_Roto")
         {
             isGrounded = true;
             ammo = 0;
