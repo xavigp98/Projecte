@@ -101,24 +101,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, reboteHurt * jumpSpeed );
-            //animator.SetTrigger("Jump");
-            ammo = 1;
-        }
-        else if (collision.gameObject.tag == "Pinchos")
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x,reboteHurt * jumpSpeed);
-            //animator.SetTrigger("Hurt");
-            life -= 1;
-        }
-    }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
@@ -131,9 +115,38 @@ public class PlayerMovement : MonoBehaviour
             ammo = 0;
         }
 
-        else if (collision.gameObject.tag == "Enemy" && Time.time - lastHit > maxHit)
+       
+        if (collision.gameObject.tag == "Enemy")
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, reboteHurt * jumpSpeed);
+            rb2d.velocity = new Vector2(rb2d.velocity.x, reboteHurt * jumpSpeed );
+            //animator.SetTrigger("Jump");
+            ammo = 1;
+        }
+        if (collision.gameObject.tag == "Pinchos")
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x,reboteHurt * jumpSpeed);
+            //animator.SetTrigger("Hurt");
+            life -= 1;
+        }
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            isGrounded = false;
+        }
+        if (collision.gameObject.tag == "Bloque_Roto")
+        {
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && Time.time - lastHit > maxHit)
+        {
             life -= 1;
             lastHit = Time.time;
         }

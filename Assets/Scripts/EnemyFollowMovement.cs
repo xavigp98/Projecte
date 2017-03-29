@@ -28,7 +28,7 @@ public class EnemyFollowMovement : MonoBehaviour {
         {
             Destroy(enemy);
         }
-        else if (enemigo.isVisible && Vector2.Distance(player.position,transform.position)>1)
+        else if (enemigo.isVisible && Vector2.Distance(player.position,transform.position)>0.7f)
         {
             transform.position = Vector2.MoveTowards(transform.position,player.position, maxSpeed);     
         }
