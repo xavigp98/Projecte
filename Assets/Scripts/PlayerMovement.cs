@@ -5,14 +5,17 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
     Animator animator;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 500f;
     public float jumpSpeed = 10f;
-    public float reboteHurt = 0.5f;
+    public float velAire = 0.5f;
+    public float reboteHurt = 1f;
     private Rigidbody2D rb2d;
     public bool isGrounded = false;
     public int ammo = 0;
+    public float maxvel = 1f;
     public float maxtime = 0.5f;
     private float lastPlay;
+    private int lastKey = 0;
     public int maxammo = 2;
     public GameObject emisor;
     public GameObject Bullet;
@@ -36,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) && isGrounded == true)
+        if (Input.GetKey(KeyCode.Space) && isGrounded == true)
         {
             //animator.SetTrigger("Jump");
             rb2d.velocity = new Vector2(rb2d.velocity.x, 1 * jumpSpeed);
@@ -45,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
        
-        if (Input.GetKey(KeyCode.W) && isGrounded == false && ammo < maxammo)
+        if (Input.GetKey(KeyCode.Space) && isGrounded == false && ammo < maxammo)
         {
             //animator.SetTrigger("Jump");
             if (Time.time - lastPlay > maxtime)
@@ -70,7 +73,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0.0f, 0.0f);
         }
-        if(Input.GetKey(KeyCode.A) && isGrounded == true)
+
+        if (Input.GetKey(KeyCode.A) && isGrounded == true)
         {
        
             //animator.SetTrigger("walk");
@@ -85,15 +89,39 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) && isGrounded == false)
         {
-            //animator.SetTrigger("walk");
-            rb2d.velocity = new Vector2(-4, rb2d.velocity.y);
+            if (lastKey == 2)
+            {
+                //animator.SetTrigger("walk");
+                rb2d.AddForce(new Vector2(-velAire*6, 0));
+                
+            }
+            else
+            {
+                //animator.SetTrigger("walk");
+                rb2d.AddForce(new Vector2(-velAire, 0));
+                if (rb2d.velocity.x < -maxvel)
+                {
+                    rb2d.velocity = new Vector2(-maxvel, rb2d.velocity.y);
+                }
+            }
+            lastKey = 1;
         }
 
 
         if (Input.GetKey(KeyCode.D) && isGrounded == false)
         {
             // animator.SetTrigger("walk");
-            rb2d.velocity = new Vector2(4, rb2d.velocity.y);
+            if (lastKey == 1)
+            {
+                //animator.SetTrigger("walk");
+                rb2d.AddForce(new Vector2(velAire * 6, 0));
+            }
+            rb2d.AddForce(new Vector2(velAire,0));
+            if (rb2d.velocity.x > maxvel)
+            {
+                rb2d.velocity = new Vector2(maxvel,rb2d.velocity.y);
+            }
+            lastKey = 2;
         }
         if (life <= 0)
         {
