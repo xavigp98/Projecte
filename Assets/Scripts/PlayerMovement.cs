@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "SaltoNivel1")
         {
-            SceneManager.LoadScene("Prototipo");
+            SceneManager.LoadScene("Nivel1");
         }
 
 
