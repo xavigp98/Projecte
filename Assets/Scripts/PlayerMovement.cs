@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerMovement : MonoBehaviour
 {
     Animator animator;
-    public float moveSpeed = 500f;
-    public float jumpSpeed = 10f;
-    public float velAire = 0.5f;
-    public float reboteHurt = 1f;
+    public float moveSpeed = 5f;
+    public float jumpSpeed = 7f;
+    public float velAire = 10f;
+    public float reboteHurt = 0.5f;
     private Rigidbody2D rb2d;
     public bool isGrounded = false;
     public int ammo = 0;
-    public float maxvel = 1f;
-    public float maxtime = 0.5f;
+    public float maxvel = 6.5f;
+    public float maxtime = 0.4f;
     private float lastPlay;
     private int lastKey = 0;
     public int maxammo = 2;
@@ -142,6 +143,12 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             ammo = 0;
         }
+
+        if (collision.gameObject.tag == "SaltoNivel1")
+        {
+            SceneManager.LoadScene("Prototipo");
+        }
+
 
        
         if (collision.gameObject.tag == "Enemy")
