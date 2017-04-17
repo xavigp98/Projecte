@@ -127,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
         if (life <= 0)
         {
             Destroy(player);
+            SceneManager.LoadScene("Menu");
         }
 
     }
@@ -155,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, reboteHurt * jumpSpeed );
             //animator.SetTrigger("Jump");
-            ammo = 1;
+            ammo -= 1;
         }
         if (collision.gameObject.tag == "Pinchos")
         {

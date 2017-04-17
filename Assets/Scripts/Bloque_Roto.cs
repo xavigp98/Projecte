@@ -19,7 +19,7 @@ public class Bloque_Roto : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(bloque, 0.5f);
+            Destroy(bloque);
         }
        
     }

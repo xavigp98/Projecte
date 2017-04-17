@@ -201,9 +201,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 3.800062, y: 2.8288527}
+  m_Offset: {x: 3.6927345, y: 2.8288527}
   serializedVersion: 2
-  m_Size: {x: 0.753485, y: 8.057463}
+  m_Size: {x: 0.9681395, y: 8.057463}
 --- !u!61 &45884085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -229,9 +229,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -2.1056192, y: 2.7232537}
+  m_Offset: {x: -1.9982911, y: 2.7232537}
   serializedVersion: 2
-  m_Size: {x: 0.6355693, y: 7.9642067}
+  m_Size: {x: 0.8502223, y: 7.9642067}
 --- !u!4 &52861522 stripped
 Transform:
   m_PrefabParentObject: {fileID: 441816, guid: 329c980761c85e24aaecd859d680ddf6, type: 2}
@@ -1142,6 +1142,10 @@ Prefab:
     - target: {fileID: 123194, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
       propertyPath: m_Name
       value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403874, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
+      propertyPath: maxammo
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6044792, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
