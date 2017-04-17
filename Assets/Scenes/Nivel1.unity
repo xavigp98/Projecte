@@ -2327,7 +2327,8 @@ Prefab:
       propertyPath: m_Name
       value: Enemigo1 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11404450, guid: 264276744fbd9a2429aa55cf5b567040, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 264276744fbd9a2429aa55cf5b567040, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &368434434
@@ -5246,6 +5247,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 893807321}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &902917445 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 148136, guid: 264276744fbd9a2429aa55cf5b567040, type: 2}
+  m_PrefabInternal: {fileID: 358280085}
+--- !u!114 &902917451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902917445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013dc44b130375c428f426b57c783ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 902917445}
+  alive: 1
 --- !u!1 &905580798
 GameObject:
   m_ObjectHideFlags: 0
