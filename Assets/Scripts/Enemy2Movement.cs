@@ -6,13 +6,13 @@ public class Enemy2Movement : MonoBehaviour
     public bool alive = true;
     private bool dirRight = true;
     public float speed = 1.0f;
-    private Rigidbody2D RigidEnemy2;
+   
     public SpriteRenderer enemigo2;
     public GameObject enemy2;
 
     private void Start()
     {
-        RigidEnemy2 = GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()

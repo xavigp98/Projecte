@@ -6,7 +6,7 @@ public class EnemyFollowMovement : MonoBehaviour {
 
     public bool alive = true;
     public float maxSpeed = 0.03f;
-    private Rigidbody2D rb2d;
+    
     public  SpriteRenderer enemigo;
     public Transform player;
     public GameObject enemy;
@@ -15,7 +15,7 @@ public class EnemyFollowMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb2d = GetComponent<Rigidbody2D>();
+       
        
 	}
 

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Animator animator;
+   // Animator animator;
     public float moveSpeed = 5f;
     public float jumpSpeed = 7f;
     public float velAire = 10f;
@@ -30,11 +30,12 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        
     }
     void Start()
     {
 
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -126,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (life <= 0)
         {
-            Destroy(player);
+            player.GetComponent<SpriteRenderer>().enabled = false;
             SceneManager.LoadScene("Menu");
         }
 
