@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
                 
                 rigidbodyTemporal.velocity = new Vector2(0, -1 *fuerzaBullet);
 
-                Destroy(balaTemporal, 0.2f);
+                Destroy(balaTemporal, 0.3f);
             }
         }
         if(!Input.anyKeyDown && isGrounded == true)

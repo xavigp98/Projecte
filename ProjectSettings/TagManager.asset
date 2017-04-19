@@ -11,6 +11,7 @@ TagManager:
   - Plataformas
   - Bloque_Roto
   - SaltoNivel1
+  - Tesoro
   layers:
   - Default
   - TransparentFX
