@@ -10707,6 +10707,7 @@ GameObject:
   - 212: {fileID: 1695539419}
   - 95: {fileID: 1695539418}
   - 61: {fileID: 1695539420}
+  - 114: {fileID: 1695539421}
   m_Layer: 0
   m_Name: Bracalet_SpreetSHeet_0
   m_TagString: Tesoro
@@ -10788,6 +10789,17 @@ BoxCollider2D:
   m_Offset: {x: -0.7124453, y: -0.08380792}
   serializedVersion: 2
   m_Size: {x: 5.7169137, y: 3.9469116}
+--- !u!114 &1695539421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695539416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa99de3c1931ec7408f40e747ed5fa5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1702423344
 GameObject:
   m_ObjectHideFlags: 0
