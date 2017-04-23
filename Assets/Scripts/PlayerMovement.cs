@@ -25,12 +25,13 @@ public class PlayerMovement : MonoBehaviour
     public GameObject player;
     private float lastHit = 0f;
     private float maxHit = 0.5f;
+    GameData data;
 
     // Use this for initialization
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        
+        data = GameData.GetInstance();
     }
     void Start()
     {
@@ -130,7 +131,8 @@ public class PlayerMovement : MonoBehaviour
             player.GetComponent<SpriteRenderer>().enabled = false;
             SceneManager.LoadScene("Menu");
         }
-
+        data.AddMuni(0, ammo);
+        data.AddMuni(1, maxammo);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
