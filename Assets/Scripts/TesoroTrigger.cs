@@ -19,8 +19,13 @@ public class TesoroTrigger : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            data.AddValue("Tesoro1", true);
-            SceneManager.LoadScene("Menu");
+            if (data.KeyExists("Tesoro1"))
+                SceneManager.LoadScene("Menu");
+            else
+            {
+                data.AddValue("Tesoro1", true);
+                SceneManager.LoadScene("Menu");
+            }
         }
     }
 }

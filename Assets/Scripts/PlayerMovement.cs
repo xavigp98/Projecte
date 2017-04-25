@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         if (life <= 0)
         {
             player.GetComponent<SpriteRenderer>().enabled = false;
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("GameOver");
         }
         data.AddMuni(0, ammo);
         data.AddMuni(1, maxammo);
