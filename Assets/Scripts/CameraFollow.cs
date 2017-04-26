@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CameraFollow : MonoBehaviour {
     public GameObject player;
+    public Text heart, bullet;
     private Vector3 offset;
     GameData data;
     int ammo, maxammo, display,display2,maxvida;
@@ -20,10 +22,8 @@ public class CameraFollow : MonoBehaviour {
         display = maxammo - ammo;
         display2 = maxvida + 1;
         transform.position = player.transform.position + offset;
+        heart.text = display2.ToString();
+        bullet.text = display.ToString();
 	}
-    void OnGUI()
-    {
-        GUI.Label(new Rect(22, 50, 1600, 240),display.ToString());
-        GUI.Label(new Rect(800, 50, 1600, 240), display2.ToString());
-    }
+    
 }
