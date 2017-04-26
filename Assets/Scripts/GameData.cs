@@ -22,7 +22,7 @@ public class GameData
 
     private Dictionary<String, bool> data = new Dictionary<String, bool>();
 
-    private int[] lamuni = new int[2];
+    private int[] lamuni = new int[3];
 
     public void AddValue(String key, bool value)
     {

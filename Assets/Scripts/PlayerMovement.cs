@@ -143,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
 
         data.AddMuni(0, ammo);
         data.AddMuni(1, maxammo);
+        data.AddMuni(2, maxvida);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
