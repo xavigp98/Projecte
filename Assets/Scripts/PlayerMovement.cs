@@ -26,10 +26,12 @@ public class PlayerMovement : MonoBehaviour
     private float lastHit = 0f;
     private float maxHit = 0.5f;
     GameData data;
-
+    public GameObject currentcheckpoint;
+    int maxvida = 2;
     // Use this for initialization
     private void Awake()
     {
+       
         rb2d = GetComponent<Rigidbody2D>();
         data = GameData.GetInstance();
     }
@@ -126,11 +128,19 @@ public class PlayerMovement : MonoBehaviour
             }
             lastKey = 2;
         }
-        if (life <= 0)
+        if (life <= 0 && maxvida>0)
         {
-            player.GetComponent<SpriteRenderer>().enabled = false;
-            SceneManager.LoadScene("GameOver");
+            life = 1;
+            maxvida--;
+            transform.position = currentcheckpoint.transform.position;            
         }
+        else if(life<=0 && maxvida<= 0)
+        {
+            maxvida = 3;
+            SceneManager.LoadScene("GameOver");
+
+        }
+
         data.AddMuni(0, ammo);
         data.AddMuni(1, maxammo);
     }
