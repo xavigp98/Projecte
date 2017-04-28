@@ -1855,7 +1855,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 474448, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.6
+      value: -11.3
       objectReference: {fileID: 0}
     - target: {fileID: 11403874, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
       propertyPath: reboteHurt
@@ -1869,6 +1869,14 @@ Prefab:
       propertyPath: currentcheckpoint
       value: 
       objectReference: {fileID: 250582925}
+    - target: {fileID: 11403874, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 153484, guid: e0db04641f3ea5840aadcd87c6b46abb, type: 2}
+    - target: {fileID: 474448, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6044792, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
     - {fileID: 9593388, guid: cb0f6a176a67f5f4a8b9e60b37e405f4, type: 2}
@@ -2156,7 +2164,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 436110, guid: df6d970e3d3442d409278b83c288005d, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5877576, guid: df6d970e3d3442d409278b83c288005d, type: 2}
       propertyPath: m_Radius
@@ -6930,7 +6938,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1193081792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7066,7 +7074,7 @@ Transform:
   m_Children:
   - {fileID: 1695539417}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
 --- !u!1 &1273682998
 GameObject:
   m_ObjectHideFlags: 0
@@ -13601,4 +13609,4 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
