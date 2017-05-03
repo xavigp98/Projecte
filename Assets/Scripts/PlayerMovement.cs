@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-
+        data.AddLlave(0, false);
         //animator = GetComponent<Animator>();
     }
 
@@ -161,6 +161,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
             ammo = 0;
+        }
+
+       
+
+        if (collision.gameObject.tag == "Puerta1")
+        {
+            if (data.GetLlave(0)){
+                Destroy(collision);
+            }
         }
 
         if (collision.gameObject.tag == "SaltoNivel1")

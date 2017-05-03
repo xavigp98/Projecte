@@ -24,14 +24,26 @@ public class GameData
 
     private int[] lamuni = new int[3];
 
+    private bool[] llaves = new bool[3];
+
     public void AddValue(String key, bool value)
     {
         data.Add(key, value);
     }
 
+    public void AddLlave(int key, bool value)
+    {
+        llaves[key] = value;
+    }
+
     public bool GetValue(String key)
     {
         return data[key];
+    }
+
+    public bool GetLlave(int key)
+    {
+        return llaves[key];
     }
 
     public int GetAmmo(int Key)

@@ -12,6 +12,8 @@ TagManager:
   - Bloque_Roto
   - SaltoNivel1
   - Tesoro
+  - Llave1
+  - Puerta1
   layers:
   - Default
   - TransparentFX
