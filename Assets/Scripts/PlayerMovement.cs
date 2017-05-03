@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-   // Animator animator;
+    // Animator animator;
     public float moveSpeed = 5f;
     public float jumpSpeed = 7f;
     public float velAire = 10f;
@@ -26,18 +26,24 @@ public class PlayerMovement : MonoBehaviour
     private float lastHit = 0f;
     private float maxHit = 0.5f;
     GameData data;
+    public GameObject puerta1, llave1,llave2,puerta2,llave3,puerta3;
     public GameObject currentcheckpoint;
+    
     int maxvida = 2;
-    // Use this for initialization
-    private void Awake()
+       
+// Use this for initialization
+private void Awake()
     {
        
         rb2d = GetComponent<Rigidbody2D>();
         data = GameData.GetInstance();
+       
+           
     }
     void Start()
     {
         data.AddLlave(0, false);
+        data.AddLlave(1, false);
         //animator = GetComponent<Animator>();
     }
 
@@ -136,6 +142,14 @@ public class PlayerMovement : MonoBehaviour
         {
             life = 1;
             maxvida--;
+            data.AddLlave(0, false);
+            data.AddLlave(1, false);
+            llave1.SetActive(true);
+            puerta1.SetActive(true);
+            puerta2.SetActive(true);
+            llave2.SetActive(true);
+            llave3.SetActive(true);
+            puerta3.SetActive(true);
             transform.position = currentcheckpoint.transform.position;            
         }
         else if(life<=0 && maxvida<= 0)
@@ -148,6 +162,7 @@ public class PlayerMovement : MonoBehaviour
         data.AddMuni(0, ammo);
         data.AddMuni(1, maxammo);
         data.AddMuni(2, maxvida);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -178,7 +193,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-       
+        if (collision.gameObject.tag == "SaltoNivel2")
+        {
+            SceneManager.LoadScene("Nivel2");
+        }
+
         if (collision.gameObject.tag == "Enemy")
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, reboteHurt * jumpSpeed );

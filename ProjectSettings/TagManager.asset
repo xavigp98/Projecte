@@ -14,6 +14,10 @@ TagManager:
   - Tesoro
   - Llave1
   - Puerta1
+  - Puerta2
+  - Llave2
+  - SaltoNivel2
+  - New Tag
   layers:
   - Default
   - TransparentFX

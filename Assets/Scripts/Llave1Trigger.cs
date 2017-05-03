@@ -22,7 +22,7 @@ public class Llave1Trigger : MonoBehaviour
         if (other.tag == "Player")
         {
             data.AddLlave(0, true);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

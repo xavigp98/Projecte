@@ -16,12 +16,21 @@ public class Puerta1Trigger : MonoBehaviour
 
     }
     // Use this for initialization
-    void OnTriggerEnter2D(Collider2D other)
+   /* void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+            if (data.GetLlave(0) == true)
+                gameObject.SetActive(false);
+        }
+    }*/
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
             if (data.GetLlave(0))
-                Destroy(gameObject);
+                gameObject.SetActive(false);
         }
     }
 }
