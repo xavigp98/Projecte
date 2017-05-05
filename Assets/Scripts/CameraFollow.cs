@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour {
         maxammo = data.GetAmmo(1);
         maxvida = data.GetAmmo(2);
         display = maxammo - ammo;
-        display2 = maxvida + 1;
+        display2 = maxvida;
         transform.position = player.transform.position + offset;
         heart.text = display2.ToString();
         bullet.text = display.ToString();

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Animator animator;
     public float moveSpeed = 5f;
+    Scene current;
     public float jumpSpeed = 7f;
     public float velAire = 10f;
     public float reboteHurt = 0.5f;
@@ -21,15 +22,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject emisor;
     public GameObject Bullet;
     public float fuerzaBullet;
-    public int life = 2;
+    public int life = 1;
     public GameObject player;
     private float lastHit = 0f;
     private float maxHit = 0.5f;
     GameData data;
-    public GameObject puerta1, llave1,llave2,puerta2,llave3,puerta3;
-    public GameObject currentcheckpoint;
     
-    int maxvida = 2;
+    
+    
        
 // Use this for initialization
 private void Awake()
@@ -44,12 +44,14 @@ private void Awake()
     {
         data.AddLlave(0, false);
         data.AddLlave(1, false);
+        data.AddLlave(2, false);
         //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        current = SceneManager.GetActiveScene();
         if (Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene("Menu");
@@ -138,31 +140,15 @@ private void Awake()
             }
             lastKey = 2;
         }
-        if (life <= 0 && maxvida>0)
+        if (life <= 0)
         {
-            life = 1;
-            maxvida--;
-            data.AddLlave(0, false);
-            data.AddLlave(1, false);
-            data.AddLlave(2, false);
-            llave1.SetActive(true);
-            puerta1.SetActive(true);
-            puerta2.SetActive(true);
-            llave2.SetActive(true);
-            llave3.SetActive(true);
-            puerta3.SetActive(true);
-            transform.position = currentcheckpoint.transform.position;            
+            SceneManager.LoadScene("Menu");
         }
-        else if(life<=0 && maxvida<= 0)
-        {
-            maxvida = 3;
-            SceneManager.LoadScene("GameOver");
-
-        }
+        
 
         data.AddMuni(0, ammo);
         data.AddMuni(1, maxammo);
-        data.AddMuni(2, maxvida);
+        data.AddMuni(2, life);
         
     }
 

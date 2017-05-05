@@ -81,6 +81,7 @@
     <Compile Include="Assets\Delay.cs" />
     <Compile Include="Assets\Scripts\Bloque_Roto.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Cangrejo.cs" />
     <Compile Include="Assets\Scripts\Delay.cs" />
     <Compile Include="Assets\Scripts\DelayNivel1.cs" />
     <Compile Include="Assets\Scripts\Enemi.cs" />
