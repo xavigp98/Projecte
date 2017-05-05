@@ -144,6 +144,7 @@ private void Awake()
             maxvida--;
             data.AddLlave(0, false);
             data.AddLlave(1, false);
+            data.AddLlave(2, false);
             llave1.SetActive(true);
             puerta1.SetActive(true);
             puerta2.SetActive(true);
