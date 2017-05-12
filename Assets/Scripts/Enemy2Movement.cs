@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Enemy2Movement : MonoBehaviour
 {
     public bool alive = true;
     private bool dirRight = true;
+    float primeraPosicionx,primeraPosiciony;
     public float speed = 1.0f;
+    public float dist;
    
     public SpriteRenderer enemigo2;
     public GameObject enemy2;
 
     private void Start()
     {
-        
+        primeraPosicionx = enemy2.transform.position.x;
+        primeraPosiciony = enemy2.transform.position.y;
     }
 
     void Update()
@@ -21,24 +25,20 @@ public class Enemy2Movement : MonoBehaviour
         {
             Destroy(enemy2);
         }
-        else if (enemigo2.isVisible)
-        {
+       
             if (dirRight)
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
             else
                 transform.Translate(-Vector2.right * speed * Time.deltaTime);
 
-            if (transform.position.x >= 3.0f)
+            if (Mathf.Abs(transform.position.x-primeraPosicionx) >= dist)
             {
-                dirRight = false;
+                dirRight = !dirRight;
             }
 
-            if (transform.position.x <= -3)
-            {
-                dirRight = true;
-            }
-        }       
+             
     }
+    
 
     void OnTriggerEnter2D(Collider2D other)
     {
