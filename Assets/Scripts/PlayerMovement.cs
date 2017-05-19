@@ -185,6 +185,11 @@ private void Awake()
             SceneManager.LoadScene("Nivel2");
         }
 
+        if (collision.gameObject.tag == "SaltoNivel3")
+        {
+            SceneManager.LoadScene("Nivel3");
+        }
+
         if (collision.gameObject.tag == "Enemy")
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, reboteHurt * jumpSpeed );

@@ -4,12 +4,13 @@ using System;
 
 public class MenuManager : MonoBehaviour {
     GameData data;
-    public GameObject Tesoro1,Tesoro2;
+    public GameObject Tesoro1,Tesoro2,Tesoro3;
     // Use this for initialization
     void Start () {
         data = GameData.GetInstance();
         Tesoro1.GetComponent<SpriteRenderer>().enabled = false;
         Tesoro2.GetComponent<SpriteRenderer>().enabled = false;
+        Tesoro3.GetComponent<SpriteRenderer>().enabled = false;
     }
 	
 	// Update is called once per frame
@@ -22,5 +23,9 @@ public class MenuManager : MonoBehaviour {
         {
             Tesoro2.GetComponent<SpriteRenderer>().enabled = true;
         }
-	}
+        if (data.KeyExists("Tesoro3"))
+        {
+            Tesoro3.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
 }
