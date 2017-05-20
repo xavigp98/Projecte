@@ -19,6 +19,7 @@ TagManager:
   - SaltoNivel2
   - New Tag
   - SaltoNivel3
+  - SaltoNivel4
   layers:
   - Default
   - TransparentFX

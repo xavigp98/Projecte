@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -90,6 +84,7 @@
     <Compile Include="Assets\Scripts\Llave2Trigger.cs" />
     <Compile Include="Assets\Scripts\Llave3Trigger.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\NaveFinal.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerNivel4.cs" />
     <Compile Include="Assets\Scripts\Puerta1Trigger.cs" />
@@ -99,7 +94,9 @@
     <Compile Include="Assets\Scripts\Resolucion.cs" />
     <Compile Include="Assets\Scripts\Tesoro2Trigger.cs" />
     <Compile Include="Assets\Scripts\Tesoro3Trigger.cs" />
+    <Compile Include="Assets\Scripts\Tesoro4Trigger.cs" />
     <Compile Include="Assets\Scripts\TesoroTrigger.cs" />
+    <Compile Include="Assets\Scripts\boa.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
