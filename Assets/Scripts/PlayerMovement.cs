@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float velAire = 10f;
     public float reboteHurt = 0.5f;
     private Rigidbody2D rb2d;
+    private SpriteRenderer spr;
     public bool isGrounded = false;
     public int ammo = 0;
     public float maxvel = 6.5f;
@@ -37,7 +38,7 @@ private void Awake()
        
         rb2d = GetComponent<Rigidbody2D>();
         data = GameData.GetInstance();
-       
+        spr = GetComponent<SpriteRenderer>();
            
     }
     void Start()
@@ -96,12 +97,14 @@ private void Awake()
        
             //animator.SetTrigger("walk");
             rb2d.velocity = new Vector2(-(1 * moveSpeed), 0);
+            spr.flipX = true;
         }
       
         if (Input.GetKey(KeyCode.D) && isGrounded == true)
         {
             // animator.SetTrigger("walk");
             rb2d.velocity = new Vector2((1 * moveSpeed), 0);
+            spr.flipX = false;
         }        
 
         if (Input.GetKey(KeyCode.A) && isGrounded == false)
@@ -110,7 +113,7 @@ private void Awake()
             {
                 //animator.SetTrigger("walk");
                 rb2d.AddForce(new Vector2(-velAire*6, 0));
-                
+               
             }
             else
             {
@@ -122,6 +125,7 @@ private void Awake()
                 }
             }
             lastKey = 1;
+            spr.flipX = true;
         }
 
 
@@ -139,6 +143,7 @@ private void Awake()
                 rb2d.velocity = new Vector2(maxvel,rb2d.velocity.y);
             }
             lastKey = 2;
+            spr.flipX = false;
         }
         if (life <= 0)
         {

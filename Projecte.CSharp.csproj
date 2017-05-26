@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -80,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Assets\Delay.cs" />
     <Compile Include="Assets\Scripts\Bloque_Roto.cs" />
+    <Compile Include="Assets\Scripts\CamaraNivel4.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Cangrejo.cs" />
     <Compile Include="Assets\Scripts\Delay.cs" />
@@ -92,7 +99,9 @@
     <Compile Include="Assets\Scripts\Llave2Trigger.cs" />
     <Compile Include="Assets\Scripts\Llave3Trigger.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\NaveFinal.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\PlayerNivel4.cs" />
     <Compile Include="Assets\Scripts\Puerta1Trigger.cs" />
     <Compile Include="Assets\Scripts\Puerta2Trigger.cs" />
     <Compile Include="Assets\Scripts\Puerta2TriggerLoco.cs" />
@@ -100,7 +109,9 @@
     <Compile Include="Assets\Scripts\Resolucion.cs" />
     <Compile Include="Assets\Scripts\Tesoro2Trigger.cs" />
     <Compile Include="Assets\Scripts\Tesoro3Trigger.cs" />
+    <Compile Include="Assets\Scripts\Tesoro4Trigger.cs" />
     <Compile Include="Assets\Scripts\TesoroTrigger.cs" />
+    <Compile Include="Assets\Scripts\boa.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
