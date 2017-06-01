@@ -27,6 +27,7 @@ public class PlayerNivel4 : MonoBehaviour
     private float lastHit = 0f;
     private float maxHit = 0.5f;
     GameData data;
+    private SpriteRenderer spr;
 
 
 
@@ -37,7 +38,7 @@ public class PlayerNivel4 : MonoBehaviour
 
         rb2d = GetComponent<Rigidbody2D>();
         data = GameData.GetInstance();
-
+        spr = GetComponent<SpriteRenderer>();
 
     }
     void Start()
@@ -96,12 +97,14 @@ public class PlayerNivel4 : MonoBehaviour
 
             //animator.SetTrigger("walk");
             rb2d.velocity = new Vector2(-(1 * moveSpeed), 0);
+            spr.flipX = true;
         }
 
         if (Input.GetKey(KeyCode.D) && isGrounded == true)
         {
             // animator.SetTrigger("walk");
             rb2d.velocity = new Vector2((1 * moveSpeed), 0);
+            spr.flipX = false;
         }
 
         if (Input.GetKey(KeyCode.A) && isGrounded == false)
@@ -122,6 +125,7 @@ public class PlayerNivel4 : MonoBehaviour
                 }
             }
             lastKey = 1;
+            spr.flipX = true;
         }
 
 
@@ -139,6 +143,7 @@ public class PlayerNivel4 : MonoBehaviour
                 rb2d.velocity = new Vector2(maxvel, rb2d.velocity.y);
             }
             lastKey = 2;
+            spr.flipX = false;
         }
         if (life <= 0)
         {
